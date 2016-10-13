@@ -15,7 +15,7 @@ def summarise_forecast(city):
         if item['temp']['min'] < min:
             min = item['temp']['min']
         curr_date = datetime.datetime.fromtimestamp(item['dt']).strftime('%Y-%m-%d')
-        if item['weather'][0]['main'] in forecast.keys():
+        if item['weather'][0]['main'] in forecasts.keys():
             forecasts[item['weather'][0]['main']].append(curr_date)
         else:
             forecasts[item['weather'][0]['main']] = [curr_date]
